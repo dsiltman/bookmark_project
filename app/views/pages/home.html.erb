@@ -1,7 +1,9 @@
-<h1>Sample App</h1>
-<p>
-  This is the home page for the
-  <a href="http://railstutorial.org/">Ruby on Rails Tutorial</a>
-  sample application.
-</p>
+  <div class="secondary-navigation">
+  </div> 
 
+<div class="content">          
+    <h2 class="title"><%= t("web-app-theme.all", :default => "All")  %> Home</h2>
+  <%= yield %>
+  </div>
+  
+ 

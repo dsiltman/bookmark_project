@@ -1,11 +1,11 @@
 BookmarkProject::Application.routes.draw do
-  get "users/new"
+  
+  match '/contact', :to => 'pages#contact'
+  match '/bookmarks',   :to => 'pages#bookmarks'
+  match '/new',    :to => 'users#new'
+  
+  root :to => 'pages#home'
 
-  get "pages/home"
-
-  get "pages/contact"
-
-  get "pages/bookmarks"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
