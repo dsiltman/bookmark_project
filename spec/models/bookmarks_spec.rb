@@ -27,9 +27,21 @@ describe Bookmarks do
     no_name_bookmarks.should_not be_valid
   end
   
+  it "should reject names that are too long" do
+    long_name = "a" * 111
+    long_name_bookmarks = Bookmarks.new(@attr.merge(:name => long_name))
+    long_name_bookmarks.should_not be_valid
+  end
+  
   it "should require a url" do
     blank_url = Bookmarks.new(@attr.merge(:url => ""))
     blank_url.should_not be_valid
+  end
+  
+    it "should reject urls that are too short" do
+    short_url = "aaa"
+    short_url_bookmarks = Bookmarks.new(@attr.merge(:url => short_url))
+    short_url_bookmarks.should_not be_valid
   end
   
 end
