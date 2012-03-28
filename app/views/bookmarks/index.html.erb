@@ -1,0 +1,52 @@
+<div class="content">            
+	 <h2 class="title"><%= t("web-app-theme.all", :default => "New")  %> New</h2>
+    <div class="inner">
+      <!-- ------------- -->
+      
+      <div class="inner">
+      <table class="table">
+        <tr>             
+          <th class="first">ID</th>
+          
+                              <th>
+            <%= t("activerecord.attributes.bookmark.name", :default => t("activerecord.labels.name", :default => "Name")) %>
+          </th>
+          
+                    <th>
+            <%= t("activerecord.attributes.bookmark.url", :default => t("activerecord.labels.url", :default => "Url")) %>
+          </th>
+                    <th><%= t("web-app-theme.created_at", :default => "Saved On")  %></th>
+          <th class="last">&nbsp;</th>
+        </tr>
+        <% @bookmarks.each do |bookmark| -%>
+        <tr class="<%= cycle("odd", "even") %>">
+          <td>
+            <%= bookmark.id %>
+          </td>
+          <td>
+            <%= bookmark.name %>
+          </td>
+                    <td>
+            <%= link_to bookmark.url, bookmarks_path(bookmark) %>
+          </td>
+                    <td>
+            <%= bookmark.date%>
+          </td>
+          <td class="last">
+        <%= link_to "#{t("web-app-theme.show", :default => "Show")}", bookmark_path(bookmark) %> |
+            <%= link_to "#{t("web-app-theme.edit", :default => "Edit")}", edit_bookmark_path(bookmark) %> |
+            <%= link_to "#{t("web-app-theme.delete", :default => "Delete")}", bookmark_path(bookmark), :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}" %>
+              </td>
+        </tr>          
+        <% end -%>
+      </table>
+      <div class="actions-bar wat-cf">
+        <div class="actions">
+        </div>
+        
+      </div>
+    </div>
+      
+      <!-- ------------ -->
+    </div>
+  </div>

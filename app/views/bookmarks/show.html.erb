@@ -1,0 +1,26 @@
+      
+  <div class="content">
+    <div class="inner">
+      
+        <p>
+          <b><%= t("activerecord.attributes.bookmark.url", :default => t("activerecord.labels.url", :default => "Url")) %>:</b>
+          <%= @bookmark.url %>
+        </p>
+
+        <p>
+          <b><%= t("activerecord.attributes.bookmark.name", :default => t("activerecord.labels.name", :default => "Name")) %>:</b>
+          <%= @bookmark.name %>
+        </p>
+
+        <p>
+          <b><%= t("activerecord.attributes.bookmark.date_saved", :default => t("activerecord.labels.date", :default => "Date saved")) %>:</b>
+          <%= @bookmark.date %>
+        </p>
+      <div class="wat-cf">
+        <%= link_to image_tag("web-app-theme/icons/application_edit.png", :alt => "#{t("web-app-theme.edit", :default=> "Edit")}") + " " + t("web-app-theme.edit", :default=> "Edit"), edit_bookmark_path(@bookmark), :class => "button" %> 
+        <%= link_to image_tag("web-app-theme/icons/cross.png", :alt => "#{t("web-app-theme.delete", :default=> "Delete")}") + " " + t("web-app-theme.delete", :default => "Delete"), bookmark_path(@bookmark), :method => "delete", :class => "button", :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}" %>
+      </div>      
+    </div>
+  </div>
+
+

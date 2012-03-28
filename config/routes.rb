@@ -1,9 +1,15 @@
 BookmarkProject::Application.routes.draw do
-
+resources :bookmarks
+  
   match '/contact', :to => 'pages#contact'
-  match '/bookmarks',   :to => 'pages#bookmarks'
+  match '/bookmarks',   :to => 'bookmarks#bookmarks'
   match '/signup',    :to => 'users#new'
-  match 'add', :to => 'bookmarks#new'
+  match '/add', :to => 'bookmarks#new'
+  match '/edit',    :to => 'bookmarks#edit'
+  match '/show', :to => 'bookmarks#show'
+  
+
+  
 
   
   root :to => 'pages#home'
